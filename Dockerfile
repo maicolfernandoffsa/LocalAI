@@ -1,3 +1,4 @@
+
 ARG GO_VERSION=1.21-bullseye
 ARG IMAGE_TYPE=extras
 # extras or core
@@ -22,8 +23,8 @@ RUN apt-get update && \
     apt-get install -y ca-certificates curl patch pip cmake && apt-get clean
 
 
-COPY --chmod=644 custom-ca-certs/* /usr/local/share/ca-certificates/
-RUN update-ca-certificates
+#COPY --chmod=644 custom-ca-certs/* /usr/local/share/ca-certificates/
+#RUN update-ca-certificates
 
 # Use the variables in subsequent instructions
 RUN echo "Target Architecture: $TARGETARCH"
